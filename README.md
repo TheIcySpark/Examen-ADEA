@@ -18,6 +18,8 @@ password=password
 
 ## Login
 Todas las vistas estan protegidas por sistema de autenticacion, por lo que para ingresar a cualquier seccion de la aplicacion primero es necesario realizar el login.
+
+Se toma como fecha de caducidad la fecha de modificacion, por default es null, para evitar que se permita el acceso por la fecha, es necesario agregar una que sea menor al dia actual.
 ![login](readme/login.png)
 
 ## Tablero de usuarios
