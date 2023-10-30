@@ -29,11 +29,13 @@ class MyApplicationRunner implements ApplicationRunner {
 		// Create default users
 		for(int i = 1 ; i <= 3; i++){
 			String login = "default" + i;
+			String name = "cliente" + i;
+			String  password = "password" + i;
 			UserModel user = userRepository.findByLogin(login);
 			if(user == null){
 				CustomPasswordEncoder customPasswordEncoder = new CustomPasswordEncoder();
-				String encodedPassword = customPasswordEncoder.encode("password");
-				userRepository.save(new UserModel(login, encodedPassword, "nombre", 1));
+				String encodedPassword = customPasswordEncoder.encode(password);
+				userRepository.save(new UserModel(login, encodedPassword, name, 1));
 			}
 		}
 	}
